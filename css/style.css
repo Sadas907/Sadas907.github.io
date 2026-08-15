@@ -1,8 +1,8 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--cream:#fff2e6;--cream-d:#f5e6d3;--art:#586357;--art-l:#6e7a6d;--gd:#1a5c18;--cr:#6B1D3A;--cr-l:#8A2E50;--cab:#4A0E28;--mul:#2D0A1E;--td:#0f0806;--tb:#1a0f0a;--tm:#4a3830;--tl:#5a4a40;--bd:rgba(107,29,58,.12)}
-html{scroll-behavior:smooth;font-size:20px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--tb);overflow-x:hidden;font-size:1rem;line-height:1.7;font-weight:400}
+html{scroll-behavior:smooth;font-size:20px;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y pinch-zoom}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--tb);max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y pinch-zoom;font-size:1rem;line-height:1.7;font-weight:400}
 @media(min-width:1400px){html{font-size:22px}}
 @media(min-width:1800px){html{font-size:24px}}
 @media(max-width:480px){html{font-size:20px}}
@@ -700,6 +700,7 @@ animation:mpflow 10s ease-in-out infinite}
   0%,100%{opacity:.4;transform:scale(1)}
   50%{opacity:1;transform:scale(1.08)}
 }
+@media(max-width:900px){.hero-photo::before{animation:none;transform:none}}
 
 /* 4. Section dividers — draw left to right */
 .sd{transform-origin:left;animation:drawline 1.5s ease-out both}
