@@ -8,7 +8,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; style-src 'unsafe-inline'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Сепарация — раскадровка">
-  <meta property="og:description" content="Черновая последовательность кадров и полного текста будущего видео.">
+  <meta property="og:description" content="Готовый видеомонтаж и раскадровка курса «Сепарация».">
   <meta property="og:url" content="https://ekaterinasudas.ru/separation-storyboard-7f4a2c91b6/">
   <meta property="og:image" content="https://ekaterinasudas.ru/separation-storyboard-7f4a2c91b6/assets/melancholia-preview.jpg">
   <meta property="og:image:width" content="720">
@@ -25,6 +25,14 @@
     h1{font-family:Playfair,serif;font-size:clamp(2.7rem,7vw,5.8rem);font-weight:500;line-height:.94;margin:0 0 22px}
     .lead{max-width:920px;color:#cfc5c7;font-size:1rem;line-height:1.65}
     .lead strong{color:var(--cream)}
+    .watch{display:grid;grid-template-columns:minmax(280px,430px) minmax(260px,470px);gap:34px;align-items:center;margin-top:32px}
+    .video-shell{position:relative;aspect-ratio:9/16;overflow:hidden;background:#090708;border:1px solid rgba(255,255,255,.12);box-shadow:0 28px 80px rgba(0,0,0,.42)}
+    .video-shell video{display:block;width:100%;height:100%;object-fit:contain;background:#090708}
+    .watch-label{font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+    .watch h2{font-family:Playfair,serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:500;line-height:1;margin:12px 0 18px}
+    .watch p{color:#cfc5c7;line-height:1.65;margin:0 0 22px}
+    .download{display:inline-block;color:var(--cream);text-decoration:none;border:1px solid rgba(244,239,232,.34);border-radius:999px;padding:12px 18px;font-size:.78rem;letter-spacing:.06em}
+    .download:hover{border-color:var(--cream)}
     .listen{max-width:720px;margin-top:26px}
     .listen-label{margin-bottom:9px;font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
     audio{display:block;width:100%;filter:sepia(.2) saturate(.6)}
@@ -45,14 +53,18 @@
     .meta{padding:13px 4px 0;color:#c6babc;font-size:.78rem;line-height:1.55}
     .meta b{color:var(--cream);font-weight:600}.hq{color:var(--rose)}
     footer{max-width:1500px;margin:auto;padding:0 28px calc(60px + env(safe-area-inset-bottom));color:var(--muted);font-size:.83rem;line-height:1.6}
-    @media(max-width:640px){header{padding:38px 18px 24px}.grid{grid-template-columns:1fr;padding:16px 18px 64px}.copy{font-size:1.22rem}.frame{max-height:none}}
+    @media(max-width:760px){header{padding:38px 18px 24px}.watch{grid-template-columns:1fr;gap:24px}.video-shell{width:100%;max-width:430px}.grid{grid-template-columns:1fr;padding:16px 18px 64px}.copy{font-size:1.22rem}.frame{max-height:none}}
   </style>
 </head>
 <body>
   <header>
     <h1>Сепарация</h1>
-    <div class="lead"><strong>Раскадровка · 100,59 сек · 20 сцен.</strong> Первые пять секунд — выбранный фрагмент «Меланхолии», затем 19 фотографий. Весь произносимый текст разложен по смысловым паузам. Это визуальный черновик: перед финальным монтажом для выбранных фотографий будут найдены исходники высокого разрешения.</div>
-    <div class="listen"><div class="listen-label">Аудиодорожка будущего ролика</div><audio controls preload="metadata"><source src="assets/storyboard-audio.mp3" type="audio/mpeg"></audio></div>
+    <div class="lead"><strong>Монтаж v1 · 100,54 сек · 20 сцен.</strong> Первые пять секунд — выбранный фрагмент «Меланхолии», затем 19 неподвижных фотографий. Текст синхронизирован с речью; ниже сохранена полная раскадровка.</div>
+    <div class="watch">
+      <div class="video-shell"><video controls playsinline preload="metadata" poster="assets/melancholia-preview.jpg"><source src="assets/separation-video-v1.mp4" type="video/mp4"></video></div>
+      <div><div class="watch-label">Готовый ролик</div><h2>Посмотреть монтаж</h2><p>Вертикаль 9:16, чёрно-белый видеоряд, шрифты Raleway и Playfair Display. Все фотографии остаются статичными.</p><a class="download" href="assets/separation-video-v1.mp4" download>Скачать MP4 · 15,84 МБ</a></div>
+    </div>
+    <div class="listen"><div class="listen-label">Отдельная аудиодорожка</div><audio controls preload="metadata"><source src="assets/storyboard-audio.mp3" type="audio/mpeg"></audio></div>
   </header>
   <main class="grid">
     <article>
@@ -60,8 +72,8 @@
       <div class="meta"><b>«Меланхолия».</b> До 00:01,26 кадр остаётся без текста; затем фразы появляются по очереди.</div>
     </article>
     <article>
-      <div class="frame light"><video autoplay muted loop playsinline preload="metadata" poster="assets/shot-02.jpg" aria-label="Тест лёгкой анимации: женщина в белом у одинокого дерева в тумане"><source src="assets/shot-02-depthflow-5s.mp4" type="video/mp4"></video><div class="shade"></div><div class="ref">кадр 02 · тест анимации</div><div class="copy"><p>Дональд Вудс Винникотт в 70-х годах прошлого века.</p></div><div class="number">02</div><div class="time">00:05–00:09</div></div>
-      <div class="meta"><b>Женщина и одинокое дерево.</b> <span class="hq">Тест лёгкой анимации; для финального монтажа нужен HQ-оригинал.</span></div>
+      <div class="frame light"><img loading="lazy" src="assets/shot-02.jpg" alt="Женщина в белом у одинокого дерева в тумане"><div class="shade"></div><div class="ref">кадр 02 · референс</div><div class="copy"><p>Дональд Вудс Винникотт в 70-х годах прошлого века.</p></div><div class="number">02</div><div class="time">00:05–00:09</div></div>
+      <div class="meta"><b>Женщина и одинокое дерево.</b> <span class="hq">Статичный кадр.</span></div>
     </article>
     <article>
       <div class="frame rightimg"><img loading="lazy" src="assets/shot-03.jpg" alt="Женский портрет в старинном интерьере"><div class="shade"></div><div class="ref">кадр 03 · референс</div><div class="copy"><p>Это выражение означает: мама — человек,</p><p>у которого есть своё прошлое,</p></div><div class="number">03</div><div class="time">00:09–00:14</div></div>
@@ -136,6 +148,6 @@
       <div class="meta"><b>Лошадь в море — финальный образ обратного течения.</b> <span class="hq">Для монтажа нужен HQ-оригинал.</span></div>
     </article>
   </main>
-  <footer>В финальном ролике текстовые блоки внутри одной сцены будут появляться последовательно по точным таймкодам. Здесь они показаны вместе только для согласования композиции и выбора кадров.</footer>
+  <footer>В опубликованном ролике текстовые блоки появляются по точным таймкодам. В раскадровке ниже они показаны вместе для согласования композиции.</footer>
 </body>
 </html>
