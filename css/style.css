@@ -1147,3 +1147,8 @@ details.ex .eb p{line-height:1.8;margin-bottom:.85em}
   .hero-text .hsl{font-size:1.02rem;line-height:1.4;margin-bottom:10px}
   .hero-text .hsub{font-size:.86rem;line-height:1.65;margin-bottom:12px}
 }
+
+@media(max-width:480px){
+  .ss p,.letter-text p,.tn p,details.ex .eb p{text-indent:1.15em}
+  .ss p,.letter-text p,.tn p,details.ex .eb p{margin-bottom:.9em;line-height:1.8}
+}
