@@ -1106,3 +1106,24 @@ details summary{transition:all .3s}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* ==== Фейковый плеер для видео (v9) ==== */
+.vid-facade{position:relative;display:block;width:100%;aspect-ratio:9/16;margin-top:14px;border:0;padding:0;border-radius:12px;overflow:hidden;background:#0b0b0b;cursor:pointer;box-shadow:0 8px 30px rgba(15,8,6,.14);transition:transform .4s ease,box-shadow .4s ease}
+.vid-facade:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,8,6,.22)}
+.vid-facade .vid-poster{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease,filter .4s ease;filter:saturate(.95) contrast(1.02)}
+.vid-facade:hover .vid-poster{transform:scale(1.03)}
+.vid-facade-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,8,6,.62) 0%,rgba(15,8,6,.18) 42%,rgba(15,8,6,.10) 100%)}
+.vid-facade .vid-play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:66px;height:66px;margin:0;border-radius:50%;background:var(--cr);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(107,29,58,.42);transition:transform .35s ease,background .35s ease}
+.vid-facade:hover .vid-play{transform:translate(-50%,-50%) scale(1.07);background:var(--cr-l)}
+.vid-facade .vid-play::after{content:'';border-left:15px solid var(--cream);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.vid-facade-meta{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px 16px 14px;color:#fff;font-family:'Raleway',sans-serif}
+.vid-facade-title{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;opacity:.94;line-height:1.35}
+.vid-facade-dur{flex:none;font-size:.7rem;letter-spacing:.1em;padding:5px 11px;border-radius:999px;background:rgba(255,242,230,.16);border:1px solid rgba(255,242,230,.3);backdrop-filter:blur(6px)}
+.vid-spinner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;border:3px solid rgba(255,242,230,.28);border-top-color:var(--cream);animation:vidSpin .9s linear infinite;pointer-events:none}
+@keyframes vidSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.vid-facade.is-loading .vid-play{opacity:.25}
+.vid-facade.is-error .vid-facade-title::after{content:' · не удалось загрузить'}
+.vid-facade.is-error{cursor:default}
+.vid-live{display:block;width:100%;aspect-ratio:9/16;margin-top:14px;border:0;border-radius:12px;background:#000;object-fit:contain;box-shadow:0 8px 30px rgba(15,8,6,.14)}
+.vid-facade-hint{margin-top:9px;font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tl);text-align:center}
+@media(prefers-reduced-motion:reduce){.vid-facade,.vid-facade .vid-play,.vid-facade .vid-poster{transition:none}}
