@@ -1127,3 +1127,23 @@ details summary{transition:all .3s}
 .vid-live{display:block;width:100%;aspect-ratio:9/16;margin-top:14px;border:0;border-radius:12px;background:#000;object-fit:contain;box-shadow:0 8px 30px rgba(15,8,6,.14)}
 .vid-facade-hint{margin-top:9px;font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tl);text-align:center}
 @media(prefers-reduced-motion:reduce){.vid-facade,.vid-facade .vid-play,.vid-facade .vid-poster{transition:none}}
+
+/* ===== ТИПОГРАФИКА: отступы, абзацы, ритм ===== */
+.ss p,.letter-text p,.tn p,details.ex .eb p{
+  text-indent:1.4em;
+  line-height:1.85;
+  margin:0 0 1em;
+}
+.ss p:last-child,.letter-text p:last-child,.tn p:last-child,details.ex .eb p:last-child{margin-bottom:0}
+.letter-text p{line-height:1.95}
+details.ex .eb p{line-height:1.8;margin-bottom:.85em}
+
+/* первый экран: вертикальный ритм */
+.hero-text h1{margin-bottom:10px}
+.hero-text .hsl{line-height:1.35;margin-bottom:12px}
+.hero-text .hsub{line-height:1.7;margin-bottom:14px}
+@media(max-width:480px){
+  .hero-text h1{margin-bottom:8px}
+  .hero-text .hsl{font-size:1.02rem;line-height:1.4;margin-bottom:10px}
+  .hero-text .hsub{font-size:.86rem;line-height:1.65;margin-bottom:12px}
+}
