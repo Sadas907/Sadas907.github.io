@@ -1152,3 +1152,17 @@ details.ex .eb p{line-height:1.8;margin-bottom:.85em}
   .ss p,.letter-text p,.tn p,details.ex .eb p{text-indent:1.15em}
   .ss p,.letter-text p,.tn p,details.ex .eb p{margin-bottom:.9em;line-height:1.8}
 }
+
+/* ===== КЕЙС: ЗАПРОС → ЧТО ДЕЛАЛИ → РЕЗУЛЬТАТ ===== */
+.case3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:940px;margin:0 auto 14px}
+.case3-card{position:relative;background:#FFFCF6;border:1px solid var(--bd);border-radius:16px;padding:22px 20px 20px;text-align:left;box-shadow:0 8px 24px rgba(26,15,10,.05)}
+.case3-num{position:absolute;top:16px;right:18px;font-family:'Bebas Neue',Impact,sans-serif;font-size:1.1rem;letter-spacing:.08em;color:var(--cr);opacity:.28}
+.case3-lbl{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.5rem;line-height:1;letter-spacing:.06em;text-transform:uppercase;color:var(--cr);margin-bottom:10px}
+.case3-txt{font-family:'Inter',system-ui,sans-serif;font-size:.92rem;line-height:1.75;color:var(--tb)}
+.case3-note{max-width:940px;margin:0 auto 26px;text-align:center;font-family:'Raleway',sans-serif;font-size:.72rem;line-height:1.6;letter-spacing:.02em;color:var(--tl)}
+@media(max-width:900px){.case3{grid-template-columns:1fr;max-width:620px}}
+@media(max-width:480px){
+  .case3-card{padding:18px 16px 16px}
+  .case3-lbl{font-size:1.3rem}
+  .case3-txt{font-size:.86rem;line-height:1.7}
+}
