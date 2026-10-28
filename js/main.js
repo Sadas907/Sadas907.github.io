@@ -340,3 +340,62 @@ var f=document.querySelectorAll('.reveal');
 for(var fi=0;fi<f.length;fi++){f[fi].classList.add('v')}
 }
 
+
+/* ==== Фейковый плеер: ленивая загрузка видео по клику (v9) ==== */
+(function(){
+  function showError(card){
+    card.classList.remove('is-loading');
+    card.classList.add('is-error');
+    var t=card.querySelector('.vid-facade-title');
+    if(t) t.textContent='Видео не загрузилось — обновите страницу';
+  }
+  document.addEventListener('click',function(e){
+    var card=e.target.closest('.vid-facade');
+    if(!card||card.classList.contains('is-playing')||card.classList.contains('is-error'))return;
+    var src=card.getAttribute('data-video');
+    if(!src)return;
+    var poster=card.getAttribute('data-poster')||'';
+    var fallback=card.getAttribute('data-fallback')||'';
+    var v=document.createElement('video');
+    v.className='vid-live';
+    v.setAttribute('controls','');
+    v.setAttribute('playsinline','');
+    v.setAttribute('preload','metadata');
+    v.setAttribute('aria-label',card.getAttribute('aria-label')||'Видео');
+    if(poster)v.poster=poster;
+    // сразу ставим плеер в поток — иначе мобильные браузеры не стартуют видео
+    card.parentNode.insertBefore(v,card);
+    v.style.display='none';
+    var spin=document.createElement('span');
+    spin.className='vid-spinner';
+    card.classList.add('is-loading');
+    card.appendChild(spin);
+    var started=false,usedFallback=false;
+    function start(){
+      if(started)return;started=true;
+      v.style.display='block';
+      var p=v.play();
+      if(p&&p.catch)p.catch(function(){});
+    }
+    v.addEventListener('canplay',start);
+    v.addEventListener('loadeddata',start);
+    v.addEventListener('playing',function(){
+      card.classList.remove('is-loading');
+      card.classList.add('is-playing');
+      card.style.display='none';
+    });
+    v.addEventListener('error',function(){
+      if(!usedFallback&&fallback){
+        usedFallback=true;
+        started=false;
+        v.src=fallback;
+        v.load();
+        return;
+      }
+      v.style.display='none';
+      showError(card);
+    });
+    v.src=src;
+    v.load();
+  },false);
+})();
