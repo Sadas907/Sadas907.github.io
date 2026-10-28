@@ -1173,3 +1173,15 @@ details.ex .eb p{line-height:1.8;margin-bottom:.85em}
 .case3-li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--cr);opacity:.55}
 .case3-li b{font-weight:600;color:var(--td)}
 @media(max-width:480px){.case3-li{font-size:.84rem;line-height:1.65;margin-bottom:9px}}
+
+/* кейс: строки вместо узких колонок */
+.case3{display:grid;grid-template-columns:1fr;gap:14px;max-width:900px;margin:0 auto 14px}
+.case3-card{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:start;padding:24px 26px 22px}
+.case3-head{position:relative;text-align:left}
+.case3-head .case3-lbl{margin-bottom:2px}
+.case3-head .case3-num{position:static;display:block;text-align:left;font-size:1rem;margin-top:2px}
+@media(max-width:760px){
+  .case3-card{grid-template-columns:1fr;gap:10px;padding:20px 18px 18px}
+  .case3-head{display:flex;align-items:baseline;gap:10px}
+  .case3-head .case3-num{font-size:.95rem}
+}
