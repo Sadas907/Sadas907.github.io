@@ -1166,3 +1166,10 @@ details.ex .eb p{line-height:1.8;margin-bottom:.85em}
   .case3-lbl{font-size:1.3rem}
   .case3-txt{font-size:.86rem;line-height:1.7}
 }
+
+.case3-list{margin-top:10px}
+.case3-li{position:relative;font-family:'Inter',system-ui,sans-serif;font-size:.88rem;line-height:1.7;color:var(--tb);padding-left:16px;margin-bottom:10px}
+.case3-li:last-child{margin-bottom:0}
+.case3-li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--cr);opacity:.55}
+.case3-li b{font-weight:600;color:var(--td)}
+@media(max-width:480px){.case3-li{font-size:.84rem;line-height:1.65;margin-bottom:9px}}
